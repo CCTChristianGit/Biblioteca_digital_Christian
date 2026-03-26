@@ -8,17 +8,13 @@ Desarrollo de un sistema de gestión de biblioteca digital en Python, aplicando 
 
 ## Instalación
 
-Clonar el repositorio:
+Para clonar el repositorio:
 
-```bash
-git clone https://github.com/CCTChristianGit/Biblioteca_digital_Christian.git
-```
-
-```bash
-cd Biblioteca_digital_Christian
-```
-
-También es posible clonar el repositorio utilizando GitHub Desktop mediante la opción "Clone a repository" e introduciendo la URL del repositorio.
+Haz clic en el botón verde "Code" en la página del repositorio.
+Copia la URL que aparece en la pestaña HTTPS.
+Abre GitHub Desktop.
+Selecciona la opción "Clone a repository".
+Pega la URL del repositorio y confirma la clonación.
 
 Instalar las dependencias necesarias:
 
