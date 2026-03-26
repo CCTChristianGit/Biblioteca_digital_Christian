@@ -18,6 +18,8 @@ git clone https://github.com/CCTChristianGit/Biblioteca_digital_Christian.git
 cd Biblioteca_digital_Christian
 ```
 
+También es posible clonar el repositorio utilizando GitHub Desktop mediante la opción "Clone a repository" e introduciendo la URL del repositorio.
+
 Instalar las dependencias necesarias:
 
 ```bash
