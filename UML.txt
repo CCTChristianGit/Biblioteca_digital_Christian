@@ -1,0 +1,79 @@
++-------------------------+     +-------------------------+     +------------------------------+
+|          Libro          |     |         Usuario         |     |           Prestamo           |
++-------------------------+     +-------------------------+     +------------------------------+
+| + id_libro: int         |     | + id_usuario: int       |     | + id_usuario: int            |
+| + titulo: str           |     | + nombre: str           |     | + id_libro: int              |
+| + autor: str            |     |                         |     | + fecha_inicio: date         |
++-------------------------+     +-------------------------+     | + plazo_dias: int            |
+| + __str__()             |     | + __str__()             |     | + fecha_devolucion: date     |
+| + __repr__()            |     | + __repr__()            |     +------------------------------+
++-------------------------+     +-------------------------+     | + fecha_limite(): date       |
+                                                                | + esta_vencido(): bool       |
+                                                                | + dias_retraso(): int        |
+                                                                | + registrar_devolucion()     |
+                                                                +------------------------------+
+
+
+
++-----------------------------------------+     +------------------------------+     +------------------------------+
+|               Biblioteca                |     |       ExportadorMixin        |     |        GestorPlugins         |
++-----------------------------------------+     +------------------------------+     +------------------------------+
+| - fecha_actual: date                    |     |                              |     | - carpeta_plugins: str       |
+| - _libros: dict                         |     +------------------------------+     +------------------------------+
+| - _usuarios: dict                       |     | + exportar_libros_csv()      |     | + listar_plugins()           |
+| - _prestamos_activos: dict              |     | + exportar_usuarios_csv()    |     | + cargar_plugin()            |
+| - _prestamos_historico: list            |     | + exportar_prestamos_csv()   |     | + ejecutar_plugin()          |
+| - _estrategia_multa: MultaStrategy      |     | + exportar_todo_json()       |     +------------------------------+
++-----------------------------------------+     | + importar_libros_csv()      |
+| + agregar_libro()                       |     | + importar_usuarios_csv()    |
+| + eliminar_libro()                      |     | + importar_prestamos_csv()   |
+| + listar_libros()                       |     | + importar_todo_json()       |
+| + buscar_libro_por_id()                 |     +------------------------------+
+| + buscar_libros_por_titulo()            |
+| + buscar_libros_por_autor()             |
+| + registrar_usuario()                   |
+| + eliminar_usuario()                    |
+| + listar_usuarios()                     |
+| + buscar_usuario_por_id()               |
+| + buscar_usuario_por_nombre()           |
+| + historial_usuario()                   |
+| + prestar_libro()                       |
+| + devolver_libro()                      |
+| + listar_prestamos_activos()            |
+| + prestamos_finalizados()               |
+| + prestamos_vencidos()                  |
+| + libro_esta_prestado()                 |
+| + cambiar_estrategia_multa()            |
+| + calcular_multa()                      |
+| + cambiar_fecha_actual()                |
+| + resumen()                             |
++-----------------------------------------+
+
+
+
++------------------------------+     +------------------------------+     +------------------------------+
+|        MultaStrategy         |     |         MultaPorDia          |     |          MultaFija           |
++------------------------------+     +------------------------------+     +------------------------------+
+|                              |     | - importe_por_dia: float     |     | - importe: float             |
++------------------------------+     +------------------------------+     +------------------------------+
+| + calcular(prestamo)         |     | + calcular(prestamo)         |     | + calcular(prestamo)         |
++------------------------------+     +------------------------------+     +------------------------------+
+
+
+
++------------------------------+     +------------------------------+
+|       ExportarPDFMixin       |     |      MetaclaseEntidad        |
++------------------------------+     +------------------------------+
+|                              |     |                              |
++------------------------------+     +------------------------------+
+| + exportar_pdf()             |     | + __new__()                  |
++------------------------------+     +------------------------------+
+
+Relaciones principales:
+- Biblioteca hereda de ExportadorMixin.
+- Biblioteca gestiona Libro, Usuario y Prestamo.
+- Biblioteca utiliza una estrategia de multas (MultaStrategy).
+- MultaPorDia y MultaFija heredan de MultaStrategy.
+- GestorPlugins permite cargar y ejecutar plugins sobre Biblioteca.
+- Libro, Usuario y Prestamo usan MetaclaseEntidad.
+- ExportarPDFMixin se usa en el plugin de exportación PDF.

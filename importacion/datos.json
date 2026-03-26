@@ -1,0 +1,77 @@
+{
+    "fecha_actual": "2026-03-22",
+    "libros": {
+        "1": {
+            "titulo": "El Quijote",
+            "autor": "Cervante"
+        },
+        "2": {
+            "titulo": "1984",
+            "autor": "George Orwell"
+        },
+        "3": {
+            "titulo": "Cien años de soledad",
+            "autor": "Gabriel Garcia Márquez"
+        },
+        "4": {
+            "titulo": "Orgullo y prejuicio",
+            "autor": "Jane Austen"
+        },
+        "5": {
+            "titulo": "Crimen y castigo",
+            "autor": "Fiódor Dostoievki"
+        }
+    },
+    "usuarios": {
+        "1": {
+            "nombre": "Ana"
+        },
+        "2": {
+            "nombre": "Luis"
+        },
+        "3": {
+            "nombre": "Miguel"
+        },
+        "4": {
+            "nombre": "Jose"
+        },
+        "5": {
+            "nombre": "Maria"
+        },
+        "6": {
+            "nombre": "Carlos"
+        },
+        "7": {
+            "nombre": "Juan"
+        },
+        "8": {
+            "nombre": "Alejandro"
+        }
+    },
+    "prestamos_historico": [
+        {
+            "id_usuario": 1,
+            "id_libro": 4,
+            "fecha_inicio": "2026-03-22",
+            "plazo_dias": 15,
+            "fecha_limite": "2026-04-06",
+            "fecha_devolucion": null
+        },
+        {
+            "id_usuario": 6,
+            "id_libro": 2,
+            "fecha_inicio": "2026-03-22",
+            "plazo_dias": 10,
+            "fecha_limite": "2026-04-01",
+            "fecha_devolucion": "2026-06-20"
+        },
+        {
+            "id_usuario": 3,
+            "id_libro": 1,
+            "fecha_inicio": "2026-03-22",
+            "plazo_dias": 2,
+            "fecha_limite": "2026-03-24",
+            "fecha_devolucion": "2026-03-22"
+        }
+    ]
+}
